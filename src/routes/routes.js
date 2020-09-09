@@ -1,14 +1,14 @@
 import { lazy } from "react";
 
 export default [
-  // {
-  //   path: "/",
-  //   label: "Home",
-  //   exact: true,
-  //   component: lazy(() => import("../pages/Home")),
-  //   private: false,
-  //   restricted: false,
-  // },
+  {
+    path: "/",
+    label: "Home",
+    exact: true,
+    component: lazy(() => import("../pages/Home")),
+    private: false,
+    restricted: false,
+  },
   {
     path: "/register",
     label: "Register",

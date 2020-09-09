@@ -10,34 +10,36 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 20px;
+  color: #c5804c;
   font-size: 20px;
   line-height: 30px;
 }
 .input {
   width: 600px;
-  line-height: 50px;
+  line-height: 40px;
   border-radius: 6px;
   border: 1px solid grey;
 }
 .button {
-  background-color: rgb(65, 105, 225);
+  background-color: #e095ad;
   color: rgb(255, 255, 255);
   font-size: 18px;
   font-weight: 600;
-  line-height: 50px;
+  line-height: 40px;
   border-radius: 6px;
-  border: 1px solid rgb(48, 90, 217);
+  border: 1px solid #e095ad;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
 }
 
 .button:hover,
 .button:focus {
-  background-color: rgb(33, 81, 224);
+  border: 1px solid #b05b5e;
+  background-color: #b05b5e;
+  outline: none;
 }
 /* authForm */
 .wrapper {
-  width: 660px;
-  padding: 30px;
   display: flex;
   flex-direction: column;
 }

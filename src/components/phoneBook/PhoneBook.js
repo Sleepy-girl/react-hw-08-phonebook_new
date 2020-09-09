@@ -5,7 +5,7 @@ import AlertError from "../alertError/AlertError";
 import ContactForm from "../contactForm/ContactForm";
 import Filter from "../filter/Filter";
 import ContactList from "../contactList/ContactList";
-import styles from "../app.module.css";
+import styles from "./phoneBook.module.css";
 
 function PhoneBook({ items, alert }) {
   return (

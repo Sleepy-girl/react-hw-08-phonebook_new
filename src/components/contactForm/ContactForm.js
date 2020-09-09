@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Loader from "react-loader-spinner";
 import contactsActions from "../../redux/contacts/contactsActions";
 import contactsOperation from "../../redux/operations/contactsOperations";
 import styles from "./contactForm.module.css";
+import LoaderComponent from "../loader/LoaderComponent";
+import ErrorComponent from "../error/ErrorComponent";
 
 class ContactForm extends Component {
   state = {
@@ -50,7 +51,7 @@ class ContactForm extends Component {
     return (
       <>
         {this.props.loading ? (
-          <Loader type="Audio" color="#4169e1" height={50} width={50} />
+          <LoaderComponent />
         ) : (
           <form onSubmit={this.handleSubmit} className={styles.form}>
             <label className={styles.label}>
@@ -79,7 +80,7 @@ class ContactForm extends Component {
           </form>
         )}
 
-        {this.props.error && <h2>ERROR!</h2>}
+        {this.props.error && <ErrorComponent />}
       </>
     );
   }
@@ -97,12 +98,5 @@ const mapDispatchToProps = {
   getContactOperation: contactsOperation.getContactOperation,
   onAlert: contactsActions.toggleAlert,
 };
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     onAddContact: (contact) => {
-//       dispatch(contactsActions.addToContacts(contact));
-//     },
-//   };
-// };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);

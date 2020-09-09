@@ -1,0 +1,28 @@
+.list {
+  display: flex;
+  justify-content: space-between;
+}
+.listWrapper {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  /* width: 100%; */
+  background-color: #e095ad;
+  border-radius: 6px;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.4);
+  padding: 10px 30px;
+  margin-bottom: 30px;
+}
+
+.item:not(:last-child) {
+  margin-right: 30px;
+}
+.link {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+}
+.linkActive {
+  color: #f7dba2;
+}

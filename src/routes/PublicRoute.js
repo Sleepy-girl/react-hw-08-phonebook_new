@@ -7,14 +7,18 @@ function PublicRoute({ component: MyComponent, isAuth, ...rest }) {
     <Route
       {...rest}
       render={(props) => {
-        return isAuth ? <Redirect to="/" /> : <MyComponent {...props} />;
+        return isAuth ? (
+          <Redirect to="/contacts" />
+        ) : (
+          <MyComponent {...props} />
+        );
       }}
     />
   );
 }
 
 const mapStateToProps = (state) => ({
-  isAuth: state.auth.token,
+  isAuth: state.auth.onAuth.token,
 });
 
 export default connect(mapStateToProps)(PublicRoute);

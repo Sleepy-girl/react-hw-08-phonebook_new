@@ -2,8 +2,6 @@ import axios from "axios";
 import authActions from "../auth/authActions";
 import contactsActions from "../contacts/contactsActions";
 
-// axios.defaults.baseURL = "https://hw-07-async-redux.firebaseio.com/";
-
 const API_KEY = "AIzaSyAm1AbNA6O3GBqm2K94jXDl4Z0wza66yV0";
 
 const methods = {
@@ -13,34 +11,34 @@ const methods = {
 
 export const register = (userData) => (dispatch) => {
   dispatch(contactsActions.loaderOn());
-  dispatch(authActions.registerRequest());
+  dispatch(authActions.authRequest());
   axios
     .post(methods.signUp, userData)
     .then((response) =>
       dispatch(
-        authActions.registerSuccess({
+        authActions.authSuccess({
           token: response.data.idToken,
           email: response.data.email,
         })
       )
     )
-    .catch((error) => dispatch(authActions.registerError(error)))
+    .catch((error) => dispatch(authActions.authError(error)))
     .finally(() => dispatch(contactsActions.loaderOff()));
 };
 
 export const login = (userData) => (dispatch) => {
   dispatch(contactsActions.loaderOn());
-  dispatch(authActions.loginRequest());
+  dispatch(authActions.authRequest());
   axios
     .post(methods.signIn, userData)
     .then((response) =>
       dispatch(
-        authActions.loginSuccess({
+        authActions.authSuccess({
           token: response.data.idToken,
           email: response.data.email,
         })
       )
     )
-    .catch((error) => dispatch(authActions.loginError(error)))
+    .catch((error) => dispatch(authActions.authError(error)))
     .finally(() => dispatch(contactsActions.loaderOff()));
 };

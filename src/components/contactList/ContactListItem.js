@@ -17,7 +17,7 @@ function ContactListItem({ name, number, id, onRemoveContact }) {
         }}
         className={styles.btnDelete}
       >
-        &#10060;
+        &#215;
       </button>
     </li>
   );
